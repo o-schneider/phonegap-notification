@@ -13,33 +13,32 @@
 	<input type=text id="url" placeholder="url"
 		value="http://www.google.com" />
 	<br />
-	<button id="send" onclick="sayHello()">Notify</button>
+	<button id="send" onclick="send()">Notify</button>
 
 	<script type="text/javascript" src="cordova-2.7.0.js"></script>
 	<script type="text/javascript" src="statusbarnotification.js"></script>
 	<script type="text/javascript" src="socket.io.js"></script>	
 
 	<script type="text/javascript">
-		function sayHello() {
+		function send() {
 			var text = document.getElementById("message");
 			var url = document.getElementById("url");
-			window.plugins.statusBarNotification.notify("Go to an url",
+			window.plugins.statusBarNotification.notify("Notifcation",
 					text.value, url.value);
 		};
 
-		var socket = io.connect("http://192.168.100.51:2403");
+		/*
+		var socket = io.connect("YOUR_BACKEND_URL");
 		socket.on('commands:new', function(command) {
 			console.log("Message");
 			console.log(command);
 			var data = command.data;
-			var url = "http://192.168.100.51:3000/#/mission/" + command.data.id
+			var url = "YOUR_UI_URL/#/mission/" + command.data.id
 					+ "?page=mission";
 			window.plugins.statusBarNotification.notify(
 					"Socket.IO notification", "Mission #" + data.id
 							+ " modifiée", url);
-		});
+		});*/
 	</script>
-	
-	<script src="http://192.168.100.51:8080/target/target-script-min.js#anonymous"></script>
 </body>
 </html>

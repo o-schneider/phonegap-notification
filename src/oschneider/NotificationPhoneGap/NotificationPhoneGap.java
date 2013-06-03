@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.intuitive.NotificationPhoneGap;
+package oschneider.NotificationPhoneGap;
 
 import android.os.Bundle;
 import org.apache.cordova.*;
